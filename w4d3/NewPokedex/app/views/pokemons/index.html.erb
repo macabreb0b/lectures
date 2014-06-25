@@ -1,0 +1,19 @@
+this is the index
+<ul>
+  <% @pokemons.each do |pokemon| %>
+    <li>
+      <%= link_to "this is pokemon_url", pokemon_url(pokemon) %> - 
+      <%= link_to "this is pokemon_path", pokemon_path(pokemon) %> -
+      <%= pokemon.name %>
+      <span style='border: thin red dashed'>
+        <%= pokemon.type_one %>
+      </span>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Pokemon", new_pokemon_url %>
+
+
+
+

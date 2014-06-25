@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NewPokedex</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  
+    <h1>Pokedex</h1>
+    <p>This is a pokedex website</p>
+    
+    <% if flash[:errors] %>
+      <h3><%= flash[:errors] %></h3>
+    <% end %>
+    
+    <div style='border: thin solid blue'>
+        <%= yield %>
+    </div>
+    
+  </body>
+</html>

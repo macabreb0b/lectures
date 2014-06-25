@@ -1,0 +1,70 @@
+New Pokemon page!
+
+<form action='<%= pokemons_url %>' method='POST'>
+  <input 
+    type='hidden' 
+    name='authenticity_token'
+    value='<%= form_authenticity_token %>'>
+  
+  <label>Name
+    <input 
+      name='pokemon[name]' 
+      placeholder='Name that Pokemon!' 
+      type='text'
+      value='<%= @pokemon.name %>'>
+  </label><br>
+  
+  <label>Height:
+    <input 
+      name='pokemon[height]' 
+      type='number'
+      value='<%= @pokemon.height %>'> feet
+  </label><br>
+  
+  <label>Weight:
+    <input name='pokemon[weight]' type='number'
+    value='<%= @pokemon.weight %>'> pounds
+  </label><br>
+  
+  <label>Type one:
+    <select name='pokemon[type_one]'>
+      <% Pokemon::TYPES.each do |type| %>
+        <option value='<%= type %>'>
+          <%= type %>
+        </option>
+      <% end %>
+    </select>
+  </label>
+  <br>
+  <label>Type two:
+    <select name='pokemon[type_two]'>
+      <option value=''>
+        ~no type two~
+      </option>
+      <% Pokemon::TYPES.each do |type| %>
+        <option value='<%= type %>'>
+          <%= type %>
+        </option>
+      <% end %>
+    </select>
+  </label>
+  
+  <br />
+  
+  <label>Gender-female:
+    <input type='radio' 
+      name='pokemon[gender]' 
+      value='female' />
+  </label>
+  
+  <br />
+  
+  <label>Gender-male:
+    <input type='radio' 
+      name='pokemon[gender]' 
+      value='male' />
+  </label>
+  
+  <br>
+  <button>Submit</button>
+</form>
