@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  astronaut_id: 
+  planet_id: 
+
+two:
+  astronaut_id: 
+  planet_id: 

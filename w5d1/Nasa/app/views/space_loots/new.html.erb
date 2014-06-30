@@ -1,0 +1,20 @@
+<form action='<%= space_loots_url %>' method='post'>
+  <input 
+    type='hidden' 
+    name='authenticity_token' 
+    value="<%= form_authenticity_token %>">
+    
+    <label>Name
+      <input type='text' name='space_loot[name]' value=''>
+    </label>
+    
+    <label>Belongs to astronaut 
+      <select name='space_loot[astronaut_id]'>
+        <% Astronaut.all.each do |astronaut| %>
+          <option value='<%= astronaut.id %>'><%= astronaut.name %></option>
+        <% end %>
+      </select>
+    </label>
+    
+    <button>Submit</button>
+</form>

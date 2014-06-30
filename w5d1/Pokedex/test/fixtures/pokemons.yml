@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  monster_type: MyString
+  height: 1
+  weight: 1
+  level: 1
+
+two:
+  name: MyString
+  monster_type: MyString
+  height: 1
+  weight: 1
+  level: 1

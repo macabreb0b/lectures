@@ -1,0 +1,51 @@
+<form action='<%= astronaut.persisted? ? astronaut_url(astronaut) : astronauts_url %>' method='post'>
+  
+  <% if astronaut.persisted? %>
+    <input type='hidden' name='_method' value='patch'>
+  <% end %>
+  
+  <input 
+    type='hidden' 
+    name='authenticity_token' 
+    value="<%= form_authenticity_token %>">
+    
+    <label>Name
+      <input type='text' name='astronaut[name]' value='<%= astronaut.name %>'>
+    </label><br>
+    
+    <label>Emails
+      <input type='text' name='astronaut[email]' value='<%= astronaut.email %>'>
+    </label><br>
+    
+    
+    Visited planets:
+    <input type='hidden' name='astronaut[visited_planet_ids][]' value=''>
+    
+    <% Planet.all.each do |planet| %>
+    
+      <label>
+        <input type='checkbox' name='astronaut[visited_planet_ids][]'
+          <%= 'checked' if astronaut.visited_planets.include?(planet) %>
+          value='<%= planet.id %>'><%= planet.name %>
+      </label>
+    <% end %>
+    
+    <br>
+    
+    Add Space Loot:
+    <label>space loot 1 name:
+      <input type='text' name='space_loots[100][name]'>
+    </label> <br>
+    
+    <label>space loot 2 name:
+      <input type='text' name='space_loots[200][name]'>
+    </label> <br>
+    
+    <label>space loot 3 name:
+      <input type='text' name='space_loots[300][name]'>
+    </label> <br>
+    
+    
+    
+    <button>Submit</button>
+  </form>
